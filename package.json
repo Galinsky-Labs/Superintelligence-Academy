@@ -13,13 +13,16 @@
     "test": "node --test test/*.test.mjs",
     "check": "node --check app/page.mjs && node --check app/layout.mjs && node --check app/api/health/route.mjs && node --check app/api/engine/route.mjs",
     "test:built": "node --test test/built/*.test.mjs",
-    "engine:deps": "npm install --prefix vendor/engine --omit=dev --ignore-scripts --no-audit --no-fund && rm -rf vendor/engine/node_modules/react vendor/engine/node_modules/react-dom"
+    "engine:deps": "npm install --prefix vendor/engine --omit=dev --ignore-scripts --no-audit --no-fund && rm -rf vendor/engine/node_modules/react vendor/engine/node_modules/react-dom",
+    "db:migrate": "node scripts/migrate.mjs",
+    "start:render": "node scripts/migrate.mjs && next start"
   },
   "dependencies": {
-    "next": "^15.5.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
     "@superintelligence/ui": "file:vendor/engine/packages/ui",
-    "ajv": "^8.17.1"
+    "ajv": "^8.17.1",
+    "next": "^15.5.0",
+    "pg": "^8.23.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   }
 }

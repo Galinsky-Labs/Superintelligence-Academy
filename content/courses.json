@@ -1,0 +1,639 @@
+{
+ "schemaVersion": 1,
+ "revision": 1,
+ "courses": [
+  {
+   "id": "foundations-writing",
+   "version": 1,
+   "title": "Writing with AI: from brief to finished draft",
+   "domain": "persuasive-writing",
+   "level": "L2",
+   "summary": "Brief an AI writing tool precisely, review its draft critically and revise it into your own work.",
+   "requiredCapabilities": [
+    "chat"
+   ],
+   "estimatedComputeMicro": 150000,
+   "lessons": [
+    {
+     "id": "fw-brief",
+     "title": "Write a brief the model cannot misread",
+     "minutes": 12,
+     "prerequisites": [
+      "short-persuasivewriting-objective"
+     ],
+     "body": "A writing brief has five parts: audience (who reads it and what they already believe), purpose (what the reader should think or do afterwards), constraints (length, tone, format, words to avoid), evidence (facts, quotes and sources the draft must use — and nothing else) and a success test (how you will judge the result).\n\nModels fill gaps with plausible defaults. If you leave out the audience, you get a generic reader; if you leave out the evidence, the model may invent statistics. Name the sources you will supply and tell the model to mark any claim it cannot support from them.\n\nPractice: write a brief for a 300-word op-ed arguing for a four-day school week, aimed at parents who are worried about childcare.",
+     "practice": {
+      "prompt": "Using this brief, draft a 300-word op-ed. Mark any claim not supported by the supplied evidence with [needs source].",
+      "operation": "writing.persuasive"
+     },
+     "quiz": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "question": "Which part of a brief most directly prevents invented statistics?",
+       "options": [
+        "Tone",
+        "Evidence with an instruction to flag unsupported claims",
+        "Length",
+        "Audience"
+       ],
+       "answer": 1,
+       "explain": "Supplying the evidence and asking the model to flag anything outside it is what limits invention."
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "question": "Your draft sounds generic. What was most likely missing?",
+       "options": [
+        "A word count",
+        "A specific audience",
+        "A title",
+        "A deadline"
+       ],
+       "answer": 1,
+       "explain": "Without a named audience the model writes for an average reader."
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "question": "A success test is…",
+       "options": [
+        "the model's confidence score",
+        "how you will judge whether the draft works",
+        "a grammar checker",
+        "the number of revisions"
+       ],
+       "answer": 1,
+       "explain": "Decide the test before you read the draft so you judge it consistently."
+      }
+     ],
+     "rubric": {
+      "description": "Save your brief as a text artifact in one of your projects, then submit it.",
+      "checks": [
+       {
+        "type": "minWords",
+        "value": 80
+       },
+       {
+        "type": "includesAll",
+        "terms": [
+         "audience",
+         "purpose",
+         "evidence"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "id": "fw-revise",
+     "title": "Review and revise an AI draft",
+     "minutes": 15,
+     "prerequisites": [
+      "fw-brief"
+     ],
+     "body": "Treat a first draft as raw material. Review it in three passes: (1) truth — check every factual claim against your sources and delete what you cannot verify; (2) argument — does each paragraph serve the purpose in your brief, in an order a sceptical reader can follow?; (3) voice — replace stock phrases with your own wording and examples.\n\nAsk the model for targeted revisions (\"tighten paragraph 2 to two sentences and keep the childcare statistic\") rather than \"make it better\". Keep each revision so you can compare versions and restore an earlier one.\n\nYou are the author: disclose AI assistance where your context requires it, and never submit text you have not checked.",
+     "practice": {
+      "prompt": "Revise the op-ed: cut it to 250 words, keep only claims supported by the brief's evidence and end with a concrete call to action.",
+      "operation": "writing.revise"
+     },
+     "quiz": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "question": "What should the first review pass focus on?",
+       "options": [
+        "Word choice",
+        "Truth of factual claims",
+        "Headline",
+        "Formatting"
+       ],
+       "answer": 1,
+       "explain": "Verify claims first; polishing unverified text wastes effort."
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "question": "Which revision instruction is most effective?",
+       "options": [
+        "Make it better",
+        "Improve the flow",
+        "Shorten paragraph 2 to two sentences and keep the cost figure",
+        "Rewrite everything"
+       ],
+       "answer": 2,
+       "explain": "Specific, checkable instructions produce predictable revisions."
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "question": "Why keep every revision?",
+       "options": [
+        "Storage is free",
+        "To compare versions and restore an earlier one",
+        "Models require it",
+        "For grading only"
+       ],
+       "answer": 1,
+       "explain": "Version history lets you recover good material a later revision removed."
+      }
+     ],
+     "rubric": {
+      "description": "Submit an artifact that you have revised at least once (two or more revisions) of at least 200 words.",
+      "checks": [
+       {
+        "type": "minWords",
+        "value": 200
+       },
+       {
+        "type": "minRevisions",
+        "value": 2
+       }
+      ]
+     }
+    }
+   ],
+   "status": "preview",
+   "authoredBy": "AI-authored draft (Claude, 2026-11-15); pending human editorial review",
+   "passScore": 0.67
+  },
+  {
+   "id": "foundations-research",
+   "version": 1,
+   "title": "Research with AI: questions, sources and citations",
+   "domain": "research",
+   "level": "L2",
+   "summary": "Turn a topic into answerable questions, gather sources you can check and write a cited brief.",
+   "requiredCapabilities": [
+    "chat"
+   ],
+   "estimatedComputeMicro": 250000,
+   "lessons": [
+    {
+     "id": "fr-questions",
+     "title": "From topic to answerable research questions",
+     "minutes": 10,
+     "prerequisites": [
+      "short-research-objective"
+     ],
+     "body": "A topic (\"wetlands\") is not a question. An answerable research question names a population or system, a variable and a measurable outcome: \"How much carbon per hectare do restored coastal wetlands store compared with degraded ones?\"\n\nBreak a topic into three to five questions of this kind before asking an AI tool anything. For each, note what evidence would answer it (a dataset, a peer-reviewed study, an official statistic) and what would not (an opinion piece, an unsourced summary).\n\nAI research tools are useful for scoping and for finding leads, but the leads are only as good as the sources you can open and read yourself.",
+     "practice": {
+      "prompt": "Break the topic 'urban heat islands' into four answerable research questions and say what evidence would answer each.",
+      "operation": "research.brief"
+     },
+     "quiz": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "question": "Which is an answerable research question?",
+       "options": [
+        "Wetlands",
+        "Are wetlands good?",
+        "How much carbon do restored coastal wetlands store per hectare versus degraded ones?",
+        "Tell me about wetlands"
+       ],
+       "answer": 2,
+       "explain": "It names the system, the variable and a measurable comparison."
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "question": "Which source best answers a quantitative question?",
+       "options": [
+        "A blog post",
+        "A peer-reviewed study with data",
+        "A social media thread",
+        "An AI summary without links"
+       ],
+       "answer": 1,
+       "explain": "Primary data you can inspect is the strongest evidence."
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "question": "What is an AI research tool best used for here?",
+       "options": [
+        "Final answers",
+        "Scoping and finding leads you then verify",
+        "Replacing sources",
+        "Grading"
+       ],
+       "answer": 1,
+       "explain": "Use it to scope and find leads; verify by reading the sources."
+      }
+     ],
+     "rubric": {
+      "description": "Save a list of at least three research questions, each with the evidence that would answer it.",
+      "checks": [
+       {
+        "type": "minWords",
+        "value": 60
+       },
+       {
+        "type": "minQuestionMarks",
+        "value": 3
+       }
+      ]
+     }
+    },
+    {
+     "id": "fr-cite",
+     "title": "Write a cited research brief",
+     "minutes": 15,
+     "prerequisites": [
+      "fr-questions"
+     ],
+     "body": "A research brief answers your questions in plain language and lets the reader check every claim. Use one citation per claim, pointing to a source the reader can open (title, author or organisation, year and a link). Separate what the sources establish from your interpretation, and list open questions you could not answer.\n\nWhen an AI tool drafts the brief, ask it to quote or point to the exact passage behind each claim. Open each link: models sometimes cite sources that do not exist or do not say what is claimed. Remove any claim whose source you could not confirm.",
+     "practice": {
+      "prompt": "Draft a 250-word research brief on urban heat islands with a numbered reference list; mark any claim you could not attribute with [unverified].",
+      "operation": "research.brief"
+     },
+     "quiz": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "question": "What must you do with every AI-provided citation?",
+       "options": [
+        "Trust it if formatted correctly",
+        "Open it and confirm it says what is claimed",
+        "Delete it",
+        "Shorten it"
+       ],
+       "answer": 1,
+       "explain": "Models can produce non-existent or misattributed citations."
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "question": "A good brief separates…",
+       "options": [
+        "fonts and colours",
+        "what sources establish from your interpretation",
+        "long and short paragraphs",
+        "questions and answers"
+       ],
+       "answer": 1,
+       "explain": "Readers need to know which statements are evidence and which are judgement."
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "question": "If you cannot confirm a claim's source you should…",
+       "options": [
+        "keep it",
+        "remove it or mark it unverified",
+        "cite the AI tool",
+        "move it to the end"
+       ],
+       "answer": 1,
+       "explain": "Unconfirmed claims must not be presented as established."
+      }
+     ],
+     "rubric": {
+      "description": "Submit a brief of at least 150 words with a references section containing at least two links.",
+      "checks": [
+       {
+        "type": "minWords",
+        "value": 150
+       },
+       {
+        "type": "includesAll",
+        "terms": [
+         "references"
+        ]
+       },
+       {
+        "type": "minLinks",
+        "value": 2
+       }
+      ]
+     }
+    }
+   ],
+   "status": "preview",
+   "authoredBy": "AI-authored draft (Claude, 2026-11-15); pending human editorial review",
+   "passScore": 0.67
+  },
+  {
+   "id": "foundations-code",
+   "version": 1,
+   "title": "Building software with AI: specify, generate, test",
+   "domain": "code",
+   "level": "L2",
+   "summary": "Write a testable specification, let an AI coding agent build against it, and judge the result by tests, not by appearance.",
+   "requiredCapabilities": [
+    "chat",
+    "tools"
+   ],
+   "estimatedComputeMicro": 400000,
+   "lessons": [
+    {
+     "id": "fc-spec",
+     "title": "Write a specification with acceptance tests",
+     "minutes": 15,
+     "prerequisites": [
+      "short-code-objective"
+     ],
+     "body": "A coding agent needs the same things a developer needs: who uses the software, what they can do (user stories), the data involved, constraints (language, libraries, hosting) and acceptance tests — concrete input/output examples that decide whether the work is done.\n\nWrite acceptance tests in Given/When/Then form: \"Given an empty to-do list, when I add 'buy milk', then the list shows one item 'buy milk'.\" Include at least one failure case (\"when I add an empty item, then I see an error and nothing is added\").\n\nTests turn \"looks right\" into \"is right\" — and they are what you will run after every AI change.",
+     "practice": {
+      "prompt": "Write a specification for a command-line to-do list with three user stories and five Given/When/Then acceptance tests, including two failure cases.",
+      "operation": "code.build"
+     },
+     "quiz": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "question": "What decides whether AI-generated code is done?",
+       "options": [
+        "It compiles",
+        "It looks clean",
+        "It passes the acceptance tests",
+        "The agent says so"
+       ],
+       "answer": 2,
+       "explain": "Only tests give verifiable evidence."
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "question": "Which is a failure-case test?",
+       "options": [
+        "Adding 'buy milk' shows one item",
+        "Adding an empty item shows an error and adds nothing",
+        "The list has a title",
+        "The app starts"
+       ],
+       "answer": 1,
+       "explain": "Failure cases check behaviour on bad input."
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "question": "Given/When/Then describes…",
+       "options": [
+        "a git workflow",
+        "a precondition, an action and an expected result",
+        "three files",
+        "a deployment"
+       ],
+       "answer": 1,
+       "explain": "It structures a test as state, action and observable outcome."
+      }
+     ],
+     "rubric": {
+      "description": "Save your specification; it must contain at least four Given/When/Then tests.",
+      "checks": [
+       {
+        "type": "minWords",
+        "value": 100
+       },
+       {
+        "type": "minOccurrences",
+        "term": "then",
+        "value": 4
+       },
+       {
+        "type": "includesAll",
+        "terms": [
+         "given",
+         "when"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "id": "fc-review",
+     "title": "Review AI-written code",
+     "minutes": 15,
+     "prerequisites": [
+      "fc-spec"
+     ],
+     "body": "Review generated code like a pull request from a fast but careless colleague. Run the tests first. Then read for: inputs that are not validated, secrets or keys written into the code, dependencies you did not ask for, error paths that silently ignore failures, and behaviour the specification does not mention.\n\nAsk the agent to explain any part you do not understand and to add a test for every bug you find before fixing it. Keep changes small so each one can be reviewed and reverted.",
+     "practice": {
+      "prompt": "Review the to-do list code for validation, secrets, unexpected dependencies and silent failures; list each finding with a suggested test.",
+      "operation": "code.review"
+     },
+     "quiz": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "question": "What do you do first when reviewing generated code?",
+       "options": [
+        "Read every line",
+        "Run the tests",
+        "Deploy it",
+        "Rename variables"
+       ],
+       "answer": 1,
+       "explain": "Tests show quickly whether the basics work."
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "question": "You find a bug. What comes before the fix?",
+       "options": [
+        "A comment",
+        "A test that reproduces it",
+        "A new branch name",
+        "Nothing"
+       ],
+       "answer": 1,
+       "explain": "A failing test proves the bug and guards against regressions."
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "question": "Which is a red flag in generated code?",
+       "options": [
+        "Small functions",
+        "An API key written into the source",
+        "Comments",
+        "Type annotations"
+       ],
+       "answer": 1,
+       "explain": "Secrets must never be committed to source code."
+      }
+     ],
+     "rubric": {
+      "description": "Submit a review with at least three findings, each with a test you would add.",
+      "checks": [
+       {
+        "type": "minWords",
+        "value": 80
+       },
+       {
+        "type": "minOccurrences",
+        "term": "test",
+        "value": 3
+       }
+      ]
+     }
+    }
+   ],
+   "status": "preview",
+   "authoredBy": "AI-authored draft (Claude, 2026-11-15); pending human editorial review",
+   "passScore": 0.67
+  },
+  {
+   "id": "foundations-image",
+   "version": 1,
+   "title": "Images with AI: briefs, iteration and rights",
+   "domain": "image",
+   "level": "L2",
+   "summary": "Describe images precisely, iterate deliberately and understand the rights and disclosure questions before you publish.",
+   "requiredCapabilities": [
+    "chat",
+    "image"
+   ],
+   "estimatedComputeMicro": 300000,
+   "lessons": [
+    {
+     "id": "fi-brief",
+     "title": "Describe the image you need",
+     "minutes": 10,
+     "prerequisites": [
+      "short-image-objective"
+     ],
+     "body": "An image brief covers subject (what and who, doing what), composition (framing, viewpoint, where the subject sits), style (photograph, illustration, the medium and era), light and colour, the format (aspect ratio, where it will be used) and exclusions (text in the image, logos, real people).\n\nIterate one variable at a time: change the lighting, keep everything else, compare. Save each variation so you can return to the best one. Generated text inside images is often wrong — add text later in a layout tool.",
+     "practice": {
+      "prompt": "Write an image brief for a 16:9 banner of a community garden at dawn, illustration style, no text or logos.",
+      "operation": "image.art-direct"
+     },
+     "quiz": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "question": "Why change one variable at a time?",
+       "options": [
+        "It is cheaper",
+        "So you can tell what caused the difference",
+        "Models require it",
+        "To save storage"
+       ],
+       "answer": 1,
+       "explain": "Controlled changes make iteration informative."
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "question": "Where should headline text usually be added?",
+       "options": [
+        "In the prompt",
+        "Later, in a layout tool",
+        "Never",
+        "In the file name"
+       ],
+       "answer": 1,
+       "explain": "Generated lettering is unreliable; set type separately."
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "question": "Which belongs in the exclusions?",
+       "options": [
+        "Aspect ratio",
+        "Lighting",
+        "No real people or logos",
+        "Style"
+       ],
+       "answer": 2,
+       "explain": "Exclusions state what must not appear."
+      }
+     ],
+     "rubric": {
+      "description": "Save an image brief that covers subject, composition, style and format.",
+      "checks": [
+       {
+        "type": "minWords",
+        "value": 50
+       },
+       {
+        "type": "includesAll",
+        "terms": [
+         "subject",
+         "composition",
+         "style"
+        ]
+       }
+      ]
+     }
+    },
+    {
+     "id": "fi-rights",
+     "title": "Rights, likeness and disclosure",
+     "minutes": 10,
+     "prerequisites": [
+      "fi-brief"
+     ],
+     "body": "Before publishing a generated image, check four things: the provider's terms for commercial use of outputs; whether the image resembles a real person, brand or protected artwork (avoid prompts that name living artists or real people without permission); whether your context requires disclosure that the image is AI-generated; and whether the image could mislead viewers about a real event.\n\nKeep a record of the prompt, model and date for each published image. Rules differ by country and platform and change often — when the stakes are high, ask someone qualified.",
+     "practice": {
+      "prompt": "Write a publication checklist for an AI-generated banner covering terms of use, likeness, disclosure and misleading content.",
+      "operation": "writing.persuasive"
+     },
+     "quiz": [
+      {
+       "id": "q1",
+       "type": "choice",
+       "question": "What should you record for each published generated image?",
+       "options": [
+        "Only the file",
+        "Prompt, model and date",
+        "Viewer count",
+        "Nothing"
+       ],
+       "answer": 1,
+       "explain": "A record supports disclosure and rights questions later."
+      },
+      {
+       "id": "q2",
+       "type": "choice",
+       "question": "Which prompt is risky?",
+       "options": [
+        "A watercolour fox",
+        "A portrait in the style of a named living artist",
+        "A city at night",
+        "An abstract pattern"
+       ],
+       "answer": 1,
+       "explain": "Imitating a living artist's style or likeness raises rights concerns."
+      },
+      {
+       "id": "q3",
+       "type": "choice",
+       "question": "Disclosure requirements…",
+       "options": [
+        "never apply",
+        "depend on context, platform and jurisdiction",
+        "are always optional",
+        "apply only to video"
+       ],
+       "answer": 1,
+       "explain": "Requirements vary and change; check them for your context."
+      }
+     ],
+     "rubric": {
+      "description": "Submit a publication checklist that covers terms, likeness and disclosure.",
+      "checks": [
+       {
+        "type": "minWords",
+        "value": 60
+       },
+       {
+        "type": "includesAll",
+        "terms": [
+         "terms",
+         "likeness",
+         "disclos"
+        ]
+       }
+      ]
+     }
+    }
+   ],
+   "status": "preview",
+   "authoredBy": "AI-authored draft (Claude, 2026-11-15); pending human editorial review",
+   "passScore": 0.67
+  }
+ ]
+}
