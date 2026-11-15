@@ -9,3 +9,20 @@
 
 .hint-depth{border:1px solid #86a9b5;border-radius:7px;background:#fff;color:#163847;padding:6px 9px;cursor:pointer;min-height:36px}
 .hint-depth:focus-visible{outline:3px solid #125e9a;outline-offset:3px}
+
+/* SIA-002/SIA-008: session and lesson-scoped tutor */
+.header-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.session-badge{display:flex;align-items:center;gap:8px}
+.session-name{font-size:.82rem;color:#3c5266}.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.launcher-trigger{display:inline-flex;align-items:center;border:1px solid #9fb3c6;border-radius:5px;background:#fff;color:#13273a;padding:7px 12px;cursor:pointer;font-size:.85rem;text-decoration:none}
+.session-badge select{border:1px solid #9fb3c6;border-radius:4px;padding:6px;background:#fff}
+.tutor{margin-top:18px;border:1px solid #c9d7e4;border-radius:8px;padding:16px;background:#fff}.tutor h2{font-size:1.05rem;margin:0 0 8px}
+.tutor form{display:flex;flex-direction:column;gap:10px}.tutor label{display:flex;flex-direction:column;gap:5px;font-size:.88rem}
+.tutor .tutor-consent{flex-direction:row;align-items:center;gap:8px}.tutor-share{display:flex;gap:10px;flex-wrap:wrap}
+.tutor textarea,.tutor select{border:1px solid #9fb3c6;border-radius:5px;padding:9px;background:#fff;color:#13273a}
+.tutor button{align-self:flex-start;background:#1f6fb2;color:#fff;border:0;border-radius:5px;padding:9px 16px;cursor:pointer}.tutor button:disabled{opacity:.55;cursor:not-allowed}
+.tutor button:focus-visible,.tutor textarea:focus-visible,.tutor select:focus-visible,.tutor input:focus-visible{outline:3px solid #2c8cc4;outline-offset:2px}
+.tutor-scope,.tutor-sources,.tutor-meta{font-size:.82rem;color:#3c5266}.tutor-answer{background:#f3f7fb;border-radius:6px;padding:10px 14px;line-height:1.5}
+.tutor-uncertain{background:#fff4d6;border-left:4px solid #c08a00;padding-left:8px}.tutor-error{color:#a12020}
+.signin{max-width:560px;margin:60px auto;padding:0 18px;line-height:1.5}.signin form{display:flex;flex-direction:column;gap:10px}
+.signin input{border:1px solid #9fb3c6;border-radius:5px;padding:11px}.signin button{background:#1f6fb2;color:#fff;border:0;border-radius:5px;padding:11px;cursor:pointer}
+.signin-help{font-size:.85rem;color:#3c5266}
