@@ -25,6 +25,7 @@ function Academy(){
    React.createElement('a',{className:'skip-link',href:'#main'},'Skip to main content'),
    React.createElement('header',{className:'app-header'},
      React.createElement('div',{className:'brand'},React.createElement('span',{className:'brand-mark','aria-hidden':'true'},"◎"),React.createElement('span',null,"Superintelligence Academy")),
+     React.createElement('nav',{'aria-label':'Academy',className:'academy-links'},React.createElement('a',{href:'/','aria-current':'page'},'Workspaces'),React.createElement('a',{href:'/courses'},'Courses'),React.createElement('a',{href:'/learning'},'My learning'),React.createElement('a',{href:'/authoring'},'Authoring')),
      React.createElement('div',{className:'header-tools'},React.createElement('span',{className:'connection-status',role:'status','aria-live':'polite'},'Engine: '+engine.status),React.createElement(SessionBadge))),
    React.createElement('div',{className:'app-columns'},
      React.createElement('nav',{'aria-label':'AI workspaces',className:'app-nav'},

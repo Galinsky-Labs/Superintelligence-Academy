@@ -20,6 +20,10 @@ test('built app serves its page and API routes',{skip:!built&&'run npm run build
     const engine=await fetch(base+'/api/engine');assert.equal(engine.status,503);assert.equal((await engine.json()).status,'unconfigured');
     assert.equal((await fetch(base+'/definitely-not-a-route')).status,404);
     assert.equal((await fetch(base+'/signin')).status,200);
+    for(const p of ['/courses','/learning','/authoring'])assert.equal((await fetch(base+p)).status,200,p);
+    const catalog=await (await fetch(base+'/api/courses')).json();assert.ok(catalog.items.length>=4);assert.equal(catalog.recordsEnabled,false);
+    assert.equal((await fetch(base+'/api/courses/foundations-code')).status,200);
+    assert.equal((await fetch(base+'/api/me')).status,401);
     assert.equal((await fetch(base+'/v1/tenants')).status,503,'proxy reports the unconfigured engine');
     assert.equal((await fetch(base+'/api/session')).status,401);
     assert.equal((await fetch(base+'/auth/academy/session')).status,401);
