@@ -7,6 +7,6 @@ test('accessible product-specific shell reuses shared engine renderer',()=>{
  assert.match(html,/data-product="academy"/);
  assert.match(html,/data-help-anchor="research.objective"/);
  assert.ok((html.match(/data-domain-option=/g)||[]).length>=10);
- assert.match(html,/not available/);
+ assert.match(html,/AI tutor/);assert.match(html,/Checking your session/);
  assert.match(html,/Interactive lessons become available/);
 });
