@@ -1,5 +1,5 @@
 {
-  "repository": "neophilism/Superintelligence-Academy",
+  "repository": "Galinsky-Labs/Superintelligence-Academy",
   "title": "Superintelligence Academy",
   "planVerified": true,
   "plannedPrCount": 23,
@@ -27,11 +27,11 @@
       ],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-002"
         },
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-008"
         }
       ],
@@ -59,15 +59,15 @@
       ],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-003"
         },
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-004"
         },
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-007"
         }
       ],
@@ -95,7 +95,7 @@
       ],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-008"
         }
       ],
@@ -123,11 +123,11 @@
       ],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-009"
         },
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-010"
         }
       ],
@@ -155,7 +155,7 @@
       ],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-009"
         }
       ],
@@ -228,11 +228,11 @@
       "prs": [],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-013"
         },
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-014"
         }
       ],
@@ -259,7 +259,7 @@
       "prs": [],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-012"
         }
       ],
@@ -285,11 +285,11 @@
       "prs": [],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-015"
         },
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-023"
         }
       ],
@@ -336,7 +336,7 @@
       "prs": [],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-014"
         }
       ],
@@ -451,15 +451,15 @@
       "prs": [],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-021"
         },
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-024"
         },
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-031"
         }
       ],
@@ -486,11 +486,11 @@
       "prs": [],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-023"
         },
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-027"
         }
       ],
@@ -516,7 +516,7 @@
       "prs": [],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-014"
         }
       ],
@@ -542,7 +542,7 @@
       "prs": [],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-014"
         }
       ],
@@ -617,11 +617,11 @@
       "prs": [],
       "externalDependencies": [
         {
-          "repository": "neophilism/Superintelligence-Command-Center",
+          "repository": "Galinsky-Labs/Superintelligence-Command-Center",
           "unitId": "SCC-003"
         },
         {
-          "repository": "neophilism/Superintelligence-Engine",
+          "repository": "Galinsky-Labs/Superintelligence-Engine",
           "unitId": "SIE-039"
         }
       ],
